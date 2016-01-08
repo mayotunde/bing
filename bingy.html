@@ -3,23 +3,26 @@
 <head>
     <meta charset=utf-8 />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
-    <title>Leaflet Bing Maps Layer</title>
+    <title>Leaflet map with Bing basemaps Layer</title>
     <script src='http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js'></script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
     <script src="leaflet-bing-layer.js"></script>
     <link href='http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css' rel='stylesheet' />
-</head>
+    </head>
 
-<body>
-    <div id='map' style='width:700px;height:500px'></div>
+<body style='background:grey'>
+    <div id='map'style='width:700px;height:500px'></div>
 
     <script>
     var BING_KEY = 'AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L'
-    var map = L.map('map').setView([6.44, 3.35], 16)
-    var bingLayer = L.tileLayer.bing(BING_KEY).addTo(map);
+
+    var map = L.map('map').setView([6.440, 3.350], 12)
+
+    var bingLayer = L.tileLayer.bing(BING_KEY).addTo(map)
     </script>
 </body>
 </html>
+
 
   
 
