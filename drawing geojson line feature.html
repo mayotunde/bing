@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Drawing geojson point features in leaflet map</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+<div id="map" style="width: 700px;height: 500px"></div>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([8.847,7.116 ], 6);
+mapLink = '<a href="http://openstreetmap.org">openstreetmap</a>,'+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsNI</a>';
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: ' &copy; ' + mapLink,maxZoom: 18}).addTo(map);
+
+var geojsonLine = L.geoJson([{
+"type": "Feature",
+"properties": {
+"Name": "Lagos-Abuja", 
+"Class": "1"
+},
+"geometry":{
+"type": "LineString",
+"coordinates": [[3.346,6.529],[3.111,7.043],[3.887,7.548],[4.482,8.721],[6.196,8.946],[7.116,8.847]]
+}},{
+"type": "Feature",
+"properties": {
+"Name": "Kano-PH", 
+"Class": "1"
+},
+"geometry":{
+"type": "LineString",
+"coordinates": [[8.451,11.644],[9.380,10.345],[9.660,8.721],[10.490,7.593],[8.622,6.015],[7.360,6.340],[6.936,4.860]]
+}
+}]).addTo(map);
+
+
+</script>
+</body>
+</html>

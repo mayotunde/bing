@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Drawing geojson point features in leaflet map</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+<div id="map" style="width: 700px;height: 500px"></div>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([8.847,7.116 ], 6);
+mapLink = '<a href="http://openstreetmap.org">openstreetmap</a>,'+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsNI</a>';
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: ' &copy; ' + mapLink,maxZoom: 18}).addTo(map);
+
+var geojsonPolygon = L.geoJson([{
+"type": "Feature",
+"properties":{"name":"Park 564",
+"size":"730Sqkm"
+},
+"geometry":{
+"type":"Polygon",
+"coordinates": [[[8.307,8.171],[8.884,7.729],[8.604,7.350],[7.756,7.873],[6.936,7.828],[6.566,8.017],[7.098,8.288]]]
+}},
+{
+"type": "Feature",
+"properties":{
+"name":"Park 112",
+"size":"530Sqkm"
+},
+"geometry":{
+"type":"Polygon",
+"coordinates":[[[5.781,5.311],[5.979,4.608],[7.468,5.302]]]
+}}
+]).addTo(map);
+
+
+</script>
+</body>
+</html>
