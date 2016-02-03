@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Drawing line features</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+
+<body style='background:#eeeeee'>
+<p style='color:red'><strong>Drawing line features</strong></p>
+
+<div id="map" style="width: 700px;height: 400px;border:2px solid black"></div>
+
+<script>
+var map = L.map('map').setView([9.00, 8.00], 6);
+mapLink = '<a href="http://stamen.com">Stamen maps</a>,'+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsNI</a>';
+L.tileLayer('http://{s}.tile.Stamen.com/toner/{z}/{x}/{y}.png',{ attribution:' Map data &copy;' + mapLink}).addTo(map);
+
+L.polyline([[9.722,5.321],[10.498,7.567],[10.922,7.459]]).addTo(map);
+
+L.polyline([[6.529,3.346],[7.043,3.111],[7.548,3.887],[8.721,4.482],[8.847,7.116]], {
+color:'#f45', dashArray: '7', weight: 7}).addTo(map);
+
+</script>
+</body>
+</html>
